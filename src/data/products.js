@@ -147,7 +147,8 @@ export const productsData = [
     benefits: "Strengthens roots, reduces hair fall, promotes growth, adds volume", 
     ingredients: "Amla, Bhringraj, Fenugreek, Hibiscus, Curry leaves, Shikakai", 
     sizes: [ 
-      { size: "200g", weight: "0.20 kg", price: 1, originalPrice: 550, stock: 70 }, 
+      { size: "200g", weight: "0.20 kg", price: 400, originalPrice: 550, stock: 70 }, 
+      { size: "250g", weight: "0.25 kg", price: 400, originalPrice: 550, stock: 60 }, 
       { size: "500g", weight: "0.51 kg", price: 600, originalPrice: 850, stock: 40 }
     ], 
     rating: 4.9, 

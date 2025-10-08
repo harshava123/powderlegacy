@@ -66,63 +66,79 @@ function Cart() {
                 
                 <div className="space-y-4">
                   {cartItems.map((item) => (
-                    <div key={item.id} className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg">
-                      {/* Product Image */}
-                      <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                        {item.image ? (
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-                        ) : (
-                          <div className="text-gray-400 text-xs text-center">
-                            <div className="font-medium">{item.name}</div>
-                            <div>{item.category}</div>
+                    <div key={item.id} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 border border-gray-200 rounded-lg">
+                      {/* Top Row: Image + Details */}
+                      <div className="flex items-start gap-3 flex-1">
+                        {/* Product Image */}
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                          {item.image ? (
+                            <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="text-gray-400 text-xs text-center px-1">
+                              <div className="font-medium text-[10px] sm:text-xs">{item.name}</div>
+                              <div className="text-[9px] sm:text-xs">{item.category}</div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Product Details */}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm sm:text-lg font-semibold text-gray-900 line-clamp-2">{item.name}</h3>
+                          <p className="text-xs sm:text-sm text-gray-600">{item.category} • {item.size}</p>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-base sm:text-lg font-bold text-green-800">₹{item.price}</span>
+                            <span className="text-xs sm:text-sm text-gray-500 line-through">₹{item.originalPrice}</span>
                           </div>
-                        )}
-                      </div>
-
-                      {/* Product Details */}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-semibold text-gray-900">{item.name}</h3>
-                        <p className="text-sm text-gray-600">{item.category} • {item.size}</p>
-                        <div className="flex items-center space-x-2 mt-1">
-                          <span className="text-lg font-bold text-green-800">₹{item.price}</span>
-                          <span className="text-sm text-gray-500 line-through">₹{item.originalPrice}</span>
                         </div>
-                      </div>
 
-                      {/* Quantity Controls */}
-                      <div className="flex items-center space-x-2">
+                        {/* Remove Button - Desktop */}
                         <button
-                          onClick={() => handleUpdateQuantity(item.id, item.size, item.quantity - 1)}
-                          className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                          onClick={() => handleRemoveItem(item.id, item.size)}
+                          className="hidden sm:block text-red-500 hover:text-red-700 transition-colors p-2"
+                          aria-label="Remove item"
                         >
-                          <Minus size={16} />
-                        </button>
-                        <span className="w-8 text-center font-medium">{item.quantity}</span>
-                        <button
-                          onClick={() => handleUpdateQuantity(item.id, item.size, item.quantity + 1)}
-                          className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                        >
-                          <Plus size={16} />
+                          <Trash2 size={18} />
                         </button>
                       </div>
 
-                      {/* Item Total */}
-                      <div className="text-right">
-                        <div className="text-lg font-bold text-gray-900">
-                          ₹{item.price * item.quantity}
+                      {/* Bottom Row: Quantity + Total */}
+                      <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
+                        {/* Quantity Controls */}
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => handleUpdateQuantity(item.id, item.size, item.quantity - 1)}
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                          >
+                            <Minus size={14} />
+                          </button>
+                          <span className="w-8 sm:w-10 text-center font-medium text-sm sm:text-base">{item.quantity}</span>
+                          <button
+                            onClick={() => handleUpdateQuantity(item.id, item.size, item.quantity + 1)}
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                          >
+                            <Plus size={14} />
+                          </button>
                         </div>
-                        <div className="text-sm text-gray-500">
-                          Save ₹{(item.originalPrice - item.price) * item.quantity}
-                        </div>
-                      </div>
 
-                      {/* Remove Button */}
-                      <button
-                        onClick={() => handleRemoveItem(item.id, item.size)}
-                        className="text-red-500 hover:text-red-700 transition-colors p-2"
-                      >
-                        <Trash2 size={16} />
-                      </button>
+                        {/* Item Total */}
+                        <div className="text-right min-w-[80px] sm:min-w-[100px]">
+                          <div className="text-base sm:text-lg font-bold text-gray-900">
+                            ₹{item.price * item.quantity}
+                          </div>
+                          <div className="text-xs sm:text-sm text-gray-500">
+                            Save ₹{(item.originalPrice - item.price) * item.quantity}
+                          </div>
+                        </div>
+
+                        {/* Remove Button - Mobile */}
+                        <button
+                          onClick={() => handleRemoveItem(item.id, item.size)}
+                          className="sm:hidden text-red-500 hover:text-red-700 transition-colors p-2"
+                          aria-label="Remove item"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>

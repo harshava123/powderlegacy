@@ -20,9 +20,13 @@ function Home() {
   useEffect(() => {
     let cancelled = false
     async function load() {
+      console.log('🏠 Home: Loading featured products...')
       const list = await fetchProducts({})
+      console.log('🏠 Home: Received products:', list.length)
+      console.log('🏠 Home: Anti Hairfall in list:', list.find(p => p.name === 'Anti Hairfall'))
       // simple pick: top 4 by rating
       const top = [...list].sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 4)
+      console.log('🏠 Home: Top 4 products:', top.map(p => ({ name: p.name, sizes: p.sizes })))
       if (!cancelled) setFeaturedProducts(top)
     }
     load()

@@ -49,7 +49,10 @@ function Products() {
   useEffect(() => {
     let cancelled = false
     async function load() {
+      console.log('🛍️ Products: Loading all products...')
       const list = await fetchProducts({})
+      console.log('🛍️ Products: Received products:', list.length)
+      console.log('🛍️ Products: Anti Hairfall in list:', list.find(p => p.name === 'Anti Hairfall'))
       if (!cancelled) {
         setProducts(list)
         setFilteredProducts(list)

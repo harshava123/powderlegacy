@@ -19,10 +19,12 @@ import { Routes, Route } from 'react-router-dom'
 import Account from '../pages/Account'
 import Admin from '../pages/Admin'
 import PaymentCallback from '../pages/PaymentCallback'
+import ScrollToTop from '../ScrollToTop'
 
 function Routers() {
   return (
     <div>
+        <ScrollToTop />
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
