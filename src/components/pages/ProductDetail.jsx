@@ -100,7 +100,6 @@ function ProductDetail() {
   }
 
   const selectedSizeObj = selectedSize || product.sizes[0]
-  const discount = Math.round(((selectedSizeObj.originalPrice - selectedSizeObj.price) / selectedSizeObj.originalPrice) * 100)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-emerald-50">
@@ -208,12 +207,6 @@ function ProductDetail() {
               <div className="flex items-baseline gap-3 mb-6">
                 <span className="text-4xl font-bold text-emerald-700">
                   ₹{selectedSizeObj.price.toLocaleString('en-IN')}
-                </span>
-                <span className="text-2xl text-gray-400 line-through">
-                  ₹{selectedSizeObj.originalPrice.toLocaleString('en-IN')}
-                </span>
-                <span className="text-emerald-600 font-semibold">
-                  Save ₹{(selectedSizeObj.originalPrice - selectedSizeObj.price).toLocaleString('en-IN')}
                 </span>
               </div>
             </div>
@@ -386,9 +379,6 @@ function ProductDetail() {
                     <div className="flex items-baseline gap-2">
                       <span className="text-lg font-bold text-emerald-700">
                         ₹{relatedProduct.sizes[0].price.toLocaleString('en-IN')}
-                      </span>
-                      <span className="text-sm text-gray-400 line-through">
-                        ₹{relatedProduct.sizes[0].originalPrice.toLocaleString('en-IN')}
                       </span>
                     </div>
                     <button className="mt-3 w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm">

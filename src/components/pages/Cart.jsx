@@ -87,7 +87,6 @@ function Cart() {
                           <p className="text-xs sm:text-sm text-gray-600">{item.category} • {item.size}</p>
                           <div className="flex items-center gap-2 mt-1">
                             <span className="text-base sm:text-lg font-bold text-green-800">₹{item.price}</span>
-                            <span className="text-xs sm:text-sm text-gray-500 line-through">₹{item.originalPrice}</span>
                           </div>
                         </div>
 
@@ -124,9 +123,6 @@ function Cart() {
                         <div className="text-right min-w-[80px] sm:min-w-[100px]">
                           <div className="text-base sm:text-lg font-bold text-gray-900">
                             ₹{item.price * item.quantity}
-                          </div>
-                          <div className="text-xs sm:text-sm text-gray-500">
-                            Save ₹{(item.originalPrice - item.price) * item.quantity}
                           </div>
                         </div>
 

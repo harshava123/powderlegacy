@@ -200,7 +200,6 @@ function Products() {
           {filteredProducts.map((product) => {
             const selectedSize = selectedProductSizes[product.id] || product.sizes[0].size
             const sizeObj = product.sizes.find(size => size.size === selectedSize)
-            const discount = Math.round(((sizeObj.originalPrice - sizeObj.price) / sizeObj.originalPrice) * 100)
 
             return (
               <div key={product.id} className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-amber-300">
@@ -214,12 +213,6 @@ function Products() {
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                       />
-                      {/* Discount Badge */}
-                      {discount > 0 && (
-                        <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-lg">
-                          -{discount}%
-                        </div>
-                      )}
                       {/* Favorite Button */}
                       <button 
                         onClick={(e) => {
@@ -268,9 +261,6 @@ function Products() {
                   <div className="flex items-baseline gap-2">
                     <span className="text-2xl font-bold text-emerald-700">
                       ₹{sizeObj.price.toLocaleString('en-IN')}
-                    </span>
-                    <span className="text-sm text-gray-400 line-through">
-                      ₹{sizeObj.originalPrice.toLocaleString('en-IN')}
                     </span>
                   </div>
 
