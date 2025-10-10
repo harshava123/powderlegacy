@@ -149,9 +149,6 @@ function ProductDetail() {
                     </button>
                   </>
                 )}
-                <div className="absolute top-4 right-4 bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  -{discount}%
-                </div>
               </div>
             </div>
 
