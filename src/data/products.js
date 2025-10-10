@@ -9,8 +9,10 @@ export const productsData = [
     benefits: "Natural cleansing, skin brightening, gentle exfoliation, anti-aging properties", 
     ingredients: "Turmeric, Sandalwood, Gram flour, Rose petals, Chickpea powder, Orange peel", 
     sizes: [ 
-      { size: "250g", weight: "0.25 kg", price: 700, originalPrice: 850, stock: 50 }, 
-      { size: "500g", weight: "0.50 kg", price: 900, originalPrice: 1100, stock: 30 }
+      { size: "200g", weight: "0.25 kg", price: 350, originalPrice: 850, stock: 50 }, 
+      { size: "400g", weight: "0.50 kg", price: 700, originalPrice: 1100, stock: 30 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1800, stock: 30 }
+
     ], 
     rating: 4.8, 
     reviews: 156,
@@ -32,8 +34,9 @@ export const productsData = [
     benefits: "Anti-aging, skin nourishment, natural glow, even skin tone", 
     ingredients: "Avarampoo, Turmeric, Multani Mitti, Almond powder, Saffron, Sandalwood", 
     sizes: [ 
-      { size: "250g", weight: "0.25 kg", price: 1200, originalPrice: 1400, stock: 45 }, 
-      { size: "500g", weight: "0.50 kg", price: 1400, originalPrice: 1700, stock: 25 }
+      { size: "200g", weight: "0.25 kg", price: 400, originalPrice: 1400, stock: 45 }, 
+      { size: "400g", weight: "0.50 kg", price: 800, originalPrice: 1300, stock: 25 },
+      { size: "800g", weight: "0.50 kg", price: 1600, originalPrice: 1800, stock: 30 }
     ], 
     rating: 4.7, 
     reviews: 89,
@@ -55,8 +58,9 @@ export const productsData = [
     benefits: "Deep cleansing, oil control, skin detoxification, pore refinement", 
     ingredients: "Multani Mitti, Neem, Sandalwood, Rose water, Tulsi, Lemon peel", 
     sizes: [ 
-      { size: "250g", weight: "0.40 kg", price: 400, originalPrice: 550, stock: 60 }, 
-      { size: "500g", weight: "0.65 kg", price: 600, originalPrice: 800, stock: 35 }
+      { size: "200g", weight: "0.40 kg", price: 400, originalPrice: 550, stock: 60 }, 
+      { size: "400g", weight: "0.65 kg", price: 800, originalPrice: 1000, stock: 35 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1800, stock: 30 }
     ], 
     rating: 4.6, 
     reviews: 124,
@@ -78,8 +82,9 @@ export const productsData = [
     benefits: "Cooling effect, skin soothing, natural fragrance, anti-inflammatory", 
     ingredients: "Pure Sandalwood, Rose petals, Turmeric, Gram flour, Saffron, Milk powder", 
     sizes: [ 
-      { size: "250g", weight: "0.30 kg", price: 1500, originalPrice: 1800, stock: 40 }, 
-      { size: "500g", weight: "0.55 kg", price: 1900, originalPrice: 2300, stock: 20 }
+      { size: "200g", weight: "0.30 kg", price: 400, originalPrice: 800, stock: 40 }, 
+      { size: "400g", weight: "0.55 kg", price: 800, originalPrice: 1100, stock: 20 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1900, stock: 30 }
     ], 
     rating: 4.9, 
     reviews: 203,
@@ -101,8 +106,9 @@ export const productsData = [
     benefits: "Antibacterial, acne treatment, skin purification, reduces inflammation", 
     ingredients: "Neem powder, Turmeric, Multani Mitti, Tulsi, Aloe vera powder, Tea tree extract", 
     sizes: [ 
-      { size: "250g", weight: "0.28 kg", price: 350, originalPrice: 480, stock: 55 }, 
-      { size: "500g", weight: "0.52 kg", price: 530, originalPrice: 720, stock: 30 }
+      { size: "200g", weight: "0.28 kg", price: 400, originalPrice: 500, stock: 55 }, 
+      { size: "400g", weight: "0.52 kg", price: 800, originalPrice: 1100, stock: 30 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1800, stock: 30 }
     ], 
     rating: 4.5, 
     reviews: 98,
@@ -124,8 +130,9 @@ export const productsData = [
     benefits: "Skin cooling, natural fragrance, stress relief, improves skin texture", 
     ingredients: "Vetiver root, Sandalwood, Rose petals, Gram flour, Mint, Cucumber powder", 
     sizes: [ 
-      { size: "250g", weight: "0.32 kg", price: 450, originalPrice: 600, stock: 35 }, 
-      { size: "500g", weight: "0.58 kg", price: 720, originalPrice: 950, stock: 25 }
+      { size: "200g", weight: "0.32 kg", price: 400, originalPrice: 600, stock: 35 }, 
+      { size: "400g", weight: "0.58 kg", price: 800, originalPrice: 950, stock: 25 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1800, stock: 30 }
     ], 
     rating: 4.7, 
     reviews: 67,
@@ -168,8 +175,9 @@ export const productsData = [
     benefits: "Controls oil production, adds volume, scalp health, maintains freshness", 
     ingredients: "Shikakai, Reetha, Amla, Lemon peel, Fuller's Earth, Tulsi", 
     sizes: [ 
-      { size: "250g", weight: "0.26 kg", price: 350, originalPrice: 480, stock: 65 }, 
-      { size: "500g", weight: "0.50 kg", price: 530, originalPrice: 720, stock: 35 }
+      { size: "200g", weight: "0.26 kg", price: 400, originalPrice: 500, stock: 65 }, 
+      { size: "400g", weight: "0.50 kg", price: 800, originalPrice: 900, stock: 35 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1800, stock: 30 }
     ], 
     rating: 4.6, 
     reviews: 145,
@@ -188,8 +196,9 @@ export const productsData = [
     benefits: "Fights dandruff, soothes scalp, prevents flakes, antimicrobial action", 
     ingredients: "Neem, Tea tree, Lemon, Multani Mitti, Fenugreek, Camphor", 
     sizes: [ 
-      { size: "250g", weight: "0.28 kg", price: 380, originalPrice: 520, stock: 60 }, 
-      { size: "500g", weight: "0.52 kg", price: 570, originalPrice: 780, stock: 30 }
+      { size: "200g", weight: "0.28 kg", price: 400, originalPrice: 520, stock: 60 }, 
+      { size: "400g", weight: "0.52 kg", price: 800, originalPrice: 980, stock: 30 },
+      { size: "800g", weight: "", price: 1600, originalPrice: 1900, stock: 30 }
     ], 
     rating: 4.8, 
     reviews: 178,
@@ -208,8 +217,9 @@ export const productsData = [
     benefits: "Natural whitening, gum health, fresh breath, cavity prevention", 
     ingredients: "Clove, Cinnamon, Neem, Rock salt, Mint, Camphor, Licorice", 
     sizes: [ 
-      { size: "100g", weight: "0.12 kg", price: 199, originalPrice: 280, stock: 80 }, 
-      { size: "200g", weight: "0.22 kg", price: 330, originalPrice: 480, stock: 50 }
+      { size: "50g", weight: "", price: 400, originalPrice: 500, stock: 80 }, 
+      { size: "100g", weight: "", price: 800, originalPrice: 900, stock: 50 },
+      { size: "200g", weight: "", price: 1600, originalPrice: 1900, stock: 30 }
     ], 
     rating: 4.6, 
     reviews: 124,
@@ -228,8 +238,9 @@ export const productsData = [
     benefits: "Skin radiance, anti-aging, hydration, natural glow", 
     ingredients: "Rose petals, Sandalwood, Turmeric, Almond powder, Saffron, Milk powder", 
     sizes: [ 
-      { size: "250g", weight: "0.29 kg", price: 400, originalPrice: 550, stock: 45 }, 
-      { size: "500g", weight: "0.53 kg", price: 600, originalPrice: 850, stock: 25 }
+      { size: "200g", weight: "0.29 kg", price: 400, originalPrice: 550, stock: 45 }, 
+      { size: "400g", weight: "0.50 kg", price: 800, originalPrice: 950, stock: 25 },
+      { size: "800g", weight: "0.50 kg", price: 1600, originalPrice: 1900, stock: 30 }
     ], 
     rating: 4.8, 
     reviews: 142,

@@ -42,8 +42,8 @@ function Products() {
     { value: 'all', label: 'All Sizes' },
     { value: '100g', label: '100g' },
     { value: '200g', label: '200g' },
-    { value: '250g', label: '250g' },
-    { value: '500g', label: '500g' }
+    { value: '400g', label: '400g' },
+    { value: '800g', label: '800g' }
   ]
 
   useEffect(() => {
