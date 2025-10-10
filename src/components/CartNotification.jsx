@@ -46,11 +46,20 @@ function CartNotification() {
           {/* Product Info */}
           <div className="bg-white/70 backdrop-blur rounded-lg p-4 mb-4 border border-white/40">
             <div className="flex items-center space-x-3">
-              {/* Product Image Placeholder */}
-              <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                <div className="text-gray-400 text-xs text-center">
-                  <div className="font-medium">{notificationItem.name}</div>
-                </div>
+              {/* Product Image */}
+              <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                {notificationItem.image ? (
+                  <img
+                    src={notificationItem.image}
+                    alt={notificationItem.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="text-gray-400 text-xs text-center px-1">
+                    <div className="font-medium truncate max-w-[44px]">{notificationItem.name}</div>
+                  </div>
+                )}
               </div>
               
               {/* Product Details */}

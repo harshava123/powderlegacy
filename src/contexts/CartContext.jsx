@@ -114,7 +114,6 @@ export const CartProvider = ({ children }) => {
       category: product.category,
       size: size.size,
       price: size.price,
-      originalPrice: size.originalPrice,
       quantity: quantity,
       image: product.images ? product.images[0] : (product.image || null),
       maxStock: size.stock
@@ -146,7 +145,7 @@ export const CartProvider = ({ children }) => {
 
   const getCartTotal = () => state.items.reduce((total, item) => total + (item.price * item.quantity), 0)
   const getCartItemsCount = () => state.items.reduce((total, item) => total + item.quantity, 0)
-  const getCartSavings = () => state.items.reduce((total, item) => total + ((item.originalPrice - item.price) * item.quantity), 0)
+  const getCartSavings = () => 0
 
   const value = {
     items: state.items,

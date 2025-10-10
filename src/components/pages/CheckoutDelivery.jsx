@@ -25,25 +25,9 @@ function CheckoutDelivery() {
     {
       id: 'standard',
       name: 'Standard Delivery',
-      description: '5-7 business days',
+      description: '',
       price: 0,
       icon: <Truck className="w-6 h-6" />,
-      popular: false
-    },
-    {
-      id: 'express',
-      name: 'Express Delivery',
-      description: '2-3 business days',
-      price: 99,
-      icon: <Clock className="w-6 h-6" />,
-      popular: true
-    },
-    {
-      id: 'premium',
-      name: 'Premium Delivery',
-      description: '1-2 business days',
-      price: 199,
-      icon: <Shield className="w-6 h-6" />,
       popular: false
     }
   ]
