@@ -1,0 +1,179 @@
+╔═══════════════════════════════════════════════════════════════╗
+║   QUICK .ENV FILE SETUP GUIDE                                 ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📝 STEP-BY-STEP INSTRUCTIONS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: CREATE .ENV FILE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. Open your project folder: H:\powderlegacy-main
+   2. Create new file named: .env
+   3. Open it in text editor
+
+STEP 2: COPY THIS CONTENT INTO .ENV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_RZP_KEY_ID=rzp_test_RQExe4U0EyrYxr
+VITE_RZP_SECRET_KEY=your-razorpay-secret
+SMTP_USER=moksh.dev0411@gmail.com
+SMTP_PASS=aogz maqj cevm yhnk
+GMAIL_USER=moksh.dev0411@gmail.com
+GMAIL_APP_PASSWORD=aogz maqj cevm yhnk
+ADMIN_EMAIL=harshavardhanpenthala@gmail.com
+APP_URL=http://localhost:5174
+
+STEP 3: GET SUPABASE CREDENTIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. Go to: https://supabase.com
+   2. Sign up (use GitHub for quick signup)
+   3. Click "New Project"
+   4. Fill in:
+      • Name: powderlegacy
+      • Database Password: [CREATE STRONG PASSWORD - SAVE IT!]
+      • Region: [Choose closest to you]
+   5. Click "Create Project"
+   6. Wait 2-3 minutes
+   
+   7. After project created:
+      → Click "Settings" (left sidebar)
+      → Click "API"
+      → You'll see two values:
+
+      ┌─────────────────────────────────────┐
+      │ Project URL:                        │
+      │ https://abcdef123.supabase.co       │ ← COPY THIS
+      └─────────────────────────────────────┘
+      
+      ┌─────────────────────────────────────┐
+      │ anon public:                        │
+      │ eyJhbGciOiJIUzI1NiIsInR5cCI6...    │ ← COPY THIS
+      └─────────────────────────────────────┘
+
+   8. REPLACE in your .env file:
+      VITE_SUPABASE_URL=https://abcdef123.supabase.co
+      VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6...
+
+STEP 4: SAVE AND RESTART
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. Save .env file
+   2. Stop dev server (Ctrl+C in terminal)
+   3. Start again: npm run dev
+
+STEP 5: RUN DATABASE SCHEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. In Supabase Dashboard → SQL Editor
+   2. Click "New Query"
+   3. Open file: supabase-schema.sql
+   4. Copy ENTIRE content
+   5. Paste in SQL Editor
+   6. Click "Run" button
+   7. Wait for success ✅
+
+STEP 6: CREATE STORAGE BUCKETS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. In Supabase Dashboard → Storage
+   2. Click "Create bucket"
+   
+   Bucket 1:
+      Name: products
+      Public: ✅ YES
+      Click "Create"
+   
+   Bucket 2:
+      Name: home
+      Public: ✅ YES
+      Click "Create"
+   
+   Bucket 3:
+      Name: header
+      Public: ✅ YES
+      Click "Create"
+
+STEP 7: SET STORAGE POLICIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   For EACH bucket (products, home, header):
+   
+   1. Click bucket name
+   2. Click "Policies" tab
+   3. Click "New policy"
+   
+   Add these 4 policies:
+   
+   Policy 1 - Public Read:
+      • All operations: SELECT
+      • Policy expression: true
+   
+   Policy 2 - Auth Upload:
+      • All operations: INSERT
+      • Policy expression: (auth.role() = 'authenticated')
+   
+   Policy 3 - Auth Update:
+      • All operations: UPDATE
+      • Policy expression: (auth.role() = 'authenticated')
+   
+   Policy 4 - Auth Delete:
+      • All operations: DELETE
+      • Policy expression: (auth.role() = 'authenticated')
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ THAT'S IT!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your .env file should now have:
+   ✓ Supabase URL
+   ✓ Supabase anon key
+   ✓ Email credentials
+   ✓ Razorpay keys (optional for now)
+
+Your Supabase should have:
+   ✓ Database tables (from schema)
+   ✓ 3 storage buckets
+   ✓ Storage policies configured
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TEST IT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. Open: http://localhost:5174
+   2. Try signup: /signup
+   3. Login as admin: /admin
+      Email: Dixit@powderlegacy.com
+      Pass: Dixit@12
+   4. Edit a product
+   5. Upload an image
+   6. Check Supabase Dashboard → See your data!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 MORE HELP:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   → ENV_CONFIGURATION.md (Detailed guide)
+   → SUPABASE_SETUP.md (Full setup)
+   → EXAMPLE.env (Template to copy)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 MINIMUM TO GET STARTED:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Just need these two to start testing:
+
+   VITE_SUPABASE_URL=https://xxx.supabase.co
+   VITE_SUPABASE_ANON_KEY=eyJhbG...
+
+Everything else can be added later!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
